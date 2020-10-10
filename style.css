@@ -1,6 +1,18 @@
 /* 
 font-family: 'Playfair Display', serif;
 font-family: 'Poppins', sans-serif;
+
+brand colour:
+
+red
+rgb(153, 38, 38)
+
+yellow
+rgb(233, 202, 62)
+
+blue
+rgb(80, 154, 167)
+
 */
 
 .jumbotron{
@@ -9,8 +21,8 @@ font-family: 'Playfair Display', serif;
 
 body {
 font-family: 'Poppins', sans-serif;
+background: rgb(255, 255, 255);
 }
-
 
 .footer {
     position: absolute;
