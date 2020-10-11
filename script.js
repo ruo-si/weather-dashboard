@@ -1,7 +1,7 @@
 
 let units = "imperial"
 let unitLabel = " °F"
-const searchHistory = ["paris", "london", "madrid"]
+let searchHistory = ["paris", "london", "madrid"]
 let $historyContainerEl = $(".history-container")
 
 
@@ -110,6 +110,24 @@ function forecast(lon, lat) {
         $("#curr-wind-speed").text("Wind Speed " + currWindSpeedInfo + " MPH");
         $("#curr-uvi").text("UV Index " + currUvIndexInfo);
 
+        // check .favorable, .moderate or .severe and add appropriate class
+        if (currUvIndexInfo < 6) { $("#curr-uvi").addClass("favorable"); }
+
+        else if (currUvIndexInfo > 6 && currUvIndexInfo < 8) {
+
+            $("#curr-uvi").addClass("moderate");
+
+            // remove previous conditions
+            $("#curr-uvi").removeClass("favorable");
+        }
+
+        else {
+            $("#curr-uvi").addClass("severe");
+
+            // remove previous conditions
+            $("#curr-uvi").removeClass("favorable moderate");
+        }
+
 
         // forcast 5 day array
         const forecast5 = response.daily
@@ -127,6 +145,7 @@ function forecast(lon, lat) {
             const $forecastDateEl = $("<div>").addClass("date").text(dateInfo);
             const $forecastIconEl = $("<img>").addClass("icon").attr("src", "http://openweathermap.org/img/wn/" + iconInfo + "@2x.png");
             const $forecastTempEl = $("<p>").addClass("temp").text(tempInfo);
+
 
             // append info to card
             $forecastDayCardEl
@@ -158,7 +177,6 @@ function unitToggle() {
     };
     searchCity()
 };
-
 
 // set up detail info card
 // grab informatin from response
