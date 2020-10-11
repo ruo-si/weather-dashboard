@@ -32,26 +32,35 @@
         <div class="form-inline">
             <input type="text" class="form-control col" id="city-input" placeholder="enter city">
             <button class="btn btn-default" id="search-btn"><i class="fas fa-search"></i></button>
+            <button class="btn btn-default" id="unit-btn">°F</button>
         </div>
-        <div class="history-container"></div>
+        <div class="history-container">
+            
+        </div>
     </div>
 
 
     <!-- today's forecast container -->
-    <div class="forecast-today">
+    <div id="today-container" class="container">
 
-        <div class="card text-center" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">City name</h5>
-                <!-- <img class="card-img-top" src="..." alt="icon image"> -->
-                <p class="card-text">temperature</p>
-            </div>
-        </div>
+        <!-- today forecast card -->
+            <h6 id="city-info" class="card-title"></h6>
+            <img id="curr-icon" src="" alt="weather icon">
+            <p id="curr-temp" class="card-text"></p>
+        
+
+        <!-- additinal info hide upon opening -->
+            <h6 id="add-info" class="card-title">Today</h6>
+            <p id="curr-date" class="card-text"></p>
+            <p id="curr-humidity" class="card-text"></p>
+            <p id="curr-wind-speed" class="card-text"></p>
+            <p id="curr-uvi" class="card-text"></p>
+        
     </div>
 
 
     <!-- 5 day forecast container - dynamically generated -->
-    <div class=" row forecast-container">
+    <div class="container row forecast-container ">
 
 
         <!-- <div class="card text-center" style="width: 18rem;">
@@ -67,9 +76,6 @@
 
 
     <!-- scripts -->
-    <!-- sticky footer -->
-    <footer class="footer">2020</footer>
-
     <!-- jQuery links -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
