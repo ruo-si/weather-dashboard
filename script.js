@@ -56,7 +56,7 @@ function searchCity(cityInput) {
 
         $("#city-info").empty().text(cityInput.toUpperCase())
         $("#curr-temp").empty().text(currTempInfo)
-        $("#curr-icon").empty().attr("src", "http://openweathermap.org/img/wn/" + currIconInfo + "@2x.png");
+        $("#curr-icon").empty().attr("src", "https://openweathermap.org/img/wn/" + currIconInfo + "@2x.png");
 
 
         // call function for forecast AJAX call
@@ -143,7 +143,7 @@ function forecast(lon, lat) {
             // create and format forecast elements
             const $forecastDayCardEl = $("<div>").addClass("card text-center").attr("style", "20rem;");
             const $forecastDateEl = $("<div>").addClass("date").text(dateInfo);
-            const $forecastIconEl = $("<img>").addClass("icon").attr("src", "http://openweathermap.org/img/wn/" + iconInfo + "@2x.png");
+            const $forecastIconEl = $("<img>").addClass("icon").attr("src", "https://openweathermap.org/img/wn/" + iconInfo + "@2x.png");
             const $forecastTempEl = $("<p>").addClass("temp").text(tempInfo);
 
 
